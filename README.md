@@ -1,25 +1,8 @@
 # explore-terraform
-explore-terraform
 
-to begin your deployment exercise - get your credentials configured.
+## Best Practices
 
-#Step #1 - bash ssologin.sh
-
-This creates your aws sso login using the default config
-
-#Step #2 - bash credentials.sh
-
-This imports your AWS access key, secret access key and session token into your env
-
-#Step #3
-
-terraform plan
-
-terraform apply
-
-The following is using a best-practice terraform build pattern.
-
-I've created the scaffolding pattern in this repo to explore building into.
+The directory structure outlined below illustrates a best-practice for building out Terraform projects. This repo uses this approach.
 
 ```
 .
@@ -51,3 +34,28 @@ I've created the scaffolding pattern in this repo to explore building into.
 │   └── yourresourcesgoeshere.tf
 └── .gitignore
 ```
+
+## We use AWS SSO with Terraform 
+
+To begin a deployment exercise - get your credentials configured using a couple of this project's scripts. 
+
+### Step #1
+
+Run `bash ssologin.sh` or simply `aws sso login`. 
+
+This kicks off an AWS SSO login. (Assuming you've already configured SSO at AWS, and that your default account is the one you’re using for this Terraform build.)  
+
+### Step #2
+
+`bash credentials.sh`
+
+This accesses the local SSO cache to import your AWS access key, secret access key and session token into environment variables that Terraform can access. 
+
+### Step #3
+
+Now you can run Terraform normally.
+
+`terraform plan`
+
+`terraform apply`
+
