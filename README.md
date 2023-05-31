@@ -21,6 +21,7 @@ The following is using a best-practice terraform build pattern.
 
 I've created the scaffolding pattern in this repo to explore building into.
 
+```
 .
 ├── main.tf
 ├── variables.tf
@@ -49,3 +50,4 @@ I've created the scaffolding pattern in this repo to explore building into.
 │   ├── lambda.tf
 │   └── yourresourcesgoeshere.tf
 └── .gitignore
+```
